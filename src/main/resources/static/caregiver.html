@@ -1,0 +1,81 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlan | Caregiver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="caregiver">
+    <aside class="sidebar">
+        <div class="brand">💊 CarePlan</div>
+        <p class="subtitle">Medicine Tracker</p>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">▦ Dashboard</a>
+            <a href="medicines.html" class="nav-link">💊 Medicines</a>
+            <a href="doses.html" class="nav-link">◷ Dose Tracking</a>
+            <a href="caregiver.html" class="nav-link active">♙ Caregiver</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div>
+                <h1>Caregiver Information</h1>
+                <p>View patient and caregiver details</p>
+            </div>
+            <span class="patient-badge">♙ Caregiver</span>
+        </header>
+
+        <div id="message" class="message"></div>
+
+        <section class="cards">
+            <div class="card">
+                <p>Total Patients</p>
+                <h2 id="totalPatients">0</h2>
+            </div>
+            <div class="card">
+                <p>Caregivers</p>
+                <h2 id="totalCaregivers">0</h2>
+            </div>
+            <div class="card">
+                <p>Medicines Assigned</p>
+                <h2 id="assignedMedicines">0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Patient and Caregiver Details</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Caregiver Name</th>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody id="caregiverTable">
+                        <tr><td colspan="5" class="empty">Loading information...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Caregiver Responsibilities</h2>
+            <ul class="responsibility-list">
+                <li>Monitor the patient's prescribed medicine schedule.</li>
+                <li>Record doses taken by the patient.</li>
+                <li>Review missed and pending dose records.</li>
+                <li>Keep patient and medicine information up to date.</li>
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```

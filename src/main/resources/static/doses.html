@@ -1,0 +1,101 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlan | Dose Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="doses">
+    <aside class="sidebar">
+        <div class="brand">💊 CarePlan</div>
+        <p class="subtitle">Medicine Tracker</p>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">▦ Dashboard</a>
+            <a href="medicines.html" class="nav-link">💊 Medicines</a>
+            <a href="doses.html" class="nav-link active">◷ Dose Tracking</a>
+            <a href="caregiver.html" class="nav-link">♙ Caregiver</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div>
+                <h1>Dose Tracking</h1>
+                <p>Record and monitor medicine doses</p>
+            </div>
+            <span class="patient-badge">◷ Dose Tracker</span>
+        </header>
+
+        <div id="message" class="message"></div>
+
+        <section class="cards">
+            <div class="card">
+                <p>Total Dose Records</p>
+                <h2 id="totalDoseRecords">0</h2>
+            </div>
+            <div class="card">
+                <p>Doses Taken</p>
+                <h2 id="dosesTaken">0</h2>
+            </div>
+            <div class="card">
+                <p>Missed Doses</p>
+                <h2 id="missedDoses">0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Record a Dose</h2>
+            <form id="doseForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="doseMedicine">Select Medicine</label>
+                        <select id="doseMedicine" required>
+                            <option value="">Select medicine</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="doseDate">Dose Date</label>
+                        <input id="doseDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="doseStatus">Status</label>
+                        <select id="doseStatus" required>
+                            <option value="PENDING">Pending</option>
+                            <option value="TAKEN">Taken</option>
+                            <option value="MISSED">Missed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn">Save Dose</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Dose History</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dose ID</th>
+                            <th>Medicine</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Taken At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="doseTable">
+                        <tr><td colspan="6" class="empty">Loading doses...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```

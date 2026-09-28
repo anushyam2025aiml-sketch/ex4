@@ -1,0 +1,102 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlan | Medicines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="medicines">
+    <aside class="sidebar">
+        <div class="brand">💊 CarePlan</div>
+        <p class="subtitle">Medicine Tracker</p>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">▦ Dashboard</a>
+            <a href="medicines.html" class="nav-link active">💊 Medicines</a>
+            <a href="doses.html" class="nav-link">◷ Dose Tracking</a>
+            <a href="caregiver.html" class="nav-link">♙ Caregiver</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div>
+                <h1>Medicine Management</h1>
+                <p>Add, update and manage medicines</p>
+            </div>
+            <span class="patient-badge">💊 Medicines</span>
+        </header>
+
+        <div id="message" class="message"></div>
+
+        <section class="panel">
+            <h2 id="medicineFormTitle">Add Medicine</h2>
+            <form id="medicineForm">
+                <input type="hidden" id="medicineId">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="medicineName">Medicine Name</label>
+                        <input id="medicineName" required placeholder="Medicine name">
+                    </div>
+                    <div class="field">
+                        <label for="dosage">Dosage</label>
+                        <input id="dosage" required placeholder="e.g. 1 tablet">
+                    </div>
+                    <div class="field">
+                        <label for="scheduleTime">Schedule Time</label>
+                        <input id="scheduleTime" type="time" required>
+                    </div>
+                    <div class="field">
+                        <label for="startDate">Start Date</label>
+                        <input id="startDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="endDate">End Date</label>
+                        <input id="endDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="patientName">Patient Name</label>
+                        <input id="patientName" required placeholder="Patient name">
+                    </div>
+                    <div class="field">
+                        <label for="caregiverName">Caregiver Name</label>
+                        <input id="caregiverName" placeholder="Caregiver name">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn">Save Medicine</button>
+                    <button type="button" class="btn secondary"
+                            onclick="resetMedicineForm()">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Medicine List</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>Time</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Patient</th>
+                            <th>Caregiver</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicineTable">
+                        <tr><td colspan="9" class="empty">Loading medicines...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```

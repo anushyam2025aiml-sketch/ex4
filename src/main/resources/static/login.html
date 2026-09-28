@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlan - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef5f1;
+            font-family: Arial, sans-serif;
+        }
+        .login-card {
+            width: 350px;
+            max-width: 90%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,.1);
+        }
+        .login-card h1 {
+            text-align: center;
+            color: #198754;
+            margin-bottom: 8px;
+        }
+        .login-card p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .login-card label {
+            display: block;
+            margin: 14px 0 6px;
+            font-weight: bold;
+        }
+        .login-card input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
+        .login-card button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            background: #198754;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-card button:hover {
+            background: #146c43;
+        }
+        #error {
+            color: #dc3545;
+            text-align: center;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>CarePlan</h1>
+        <p>Elderly Medicine Reminder Tracker</p>
+
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username"
+                   placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter password" required>
+
+            <button type="submit">Login</button>
+            <div id="error"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const username =
+                    document.getElementById("username").value.trim();
+                const password =
+                    document.getElementById("password").value;
+
+                if (username && password.trim()) {
+                    sessionStorage.setItem("careplanUser", username);
+                    window.location.href = "index.html";
+                } else {
+                    document.getElementById("error").textContent =
+                        "Please enter your username and password.";
+                }
+            });
+    </script>
+</body>
+</html>

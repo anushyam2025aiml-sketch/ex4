@@ -1,0 +1,80 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlan | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+    <aside class="sidebar">
+        <div class="brand">💊 CarePlan</div>
+        <p class="subtitle">Medicine Tracker</p>
+        <nav class="nav">
+            <a href="index.html" class="nav-link active">▦ Dashboard</a>
+            <a href="medicines.html" class="nav-link">💊 Medicines</a>
+            <a href="doses.html" class="nav-link">◷ Dose Tracking</a>
+            <a href="caregiver.html" class="nav-link">♙ Caregiver</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div>
+                <h1>CarePlan Dashboard</h1>
+                <p>Welcome, <span id="welcomeName">admin</span></p>
+            </div>
+            <span class="patient-badge">👤 Patient</span>
+        </header>
+
+        <div id="message" class="message"></div>
+
+        <h2 class="section-title">Dashboard Overview</h2>
+        <div class="cards">
+            <div class="card">
+                <p>Total Medicines</p>
+                <h2 id="totalMedicines">0</h2>
+            </div>
+            <div class="card">
+                <p>Doses Taken</p>
+                <h2 id="dosesTaken">0</h2>
+            </div>
+            <div class="card">
+                <p>Missed Doses</p>
+                <h2 id="missedDoses">0</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <h2>Quick Actions</h2>
+            <div class="actions">
+                <a class="btn" href="medicines.html">Manage Medicines</a>
+                <a class="btn" href="doses.html">Track Doses</a>
+                <a class="btn" href="caregiver.html">View Caregiver</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Medicine Overview</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>Schedule</th>
+                            <th>Patient</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboardMedicineTable">
+                        <tr><td colspan="4" class="empty">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```
